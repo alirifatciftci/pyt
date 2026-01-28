@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# API Keys ve Gizli Bilgiler
+.env
+client_secrets.json
+youtube_token.pickle
+tiktok_session.txt
+yeni.json
+video.json
+
+# Geçici dosyalar
+temp_*.mp4
+temp_*.mp3
+test_*.mp3
+test_*.mp4
+
+# Video çıktıları
+final_video.mp4
+output_*.mp4
+video_*.mp4
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Excel raporları
+*.xlsx
+firsatlar*.xlsx
+araba_*.xlsx
+emlak_*.xlsx
+
+# Test ve gereksiz dosyalar
+araba_hizli.py
+araba_manuel.py
+araba_oto.py
+araba_main.py
+araba_toplayici.py
+ARABA_KULLANIM.md
