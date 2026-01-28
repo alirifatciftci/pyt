@@ -68,3 +68,13 @@ ENABLE_ZOOM_EFFECT = True
 
 # Zoom miktarı (0.15 = %15 zoom)
 ZOOM_AMOUNT = 0.15
+
+
+# ==========================================
+# ALT YAZI AYARLARI
+# ==========================================
+
+# Alt yazı tipi:
+# - "word_by_word": Kelime kelime göster (statik, ekranın ortasında)
+# - "scrolling": Aşağıdan yukarıya kayan (dinamik, TikTok tarzı)
+SUBTITLE_TYPE = "scrolling"  # KAYAN YAZI (VİRAL!)

@@ -238,7 +238,7 @@ class VideoManager:
             group_duration = len(group) * time_per_word
             
             try:
-                # Şablon ayarlarıyla metin oluştur - DAHA BÜYÜK ALAN
+                # Şablon ayarlarıyla metin oluştur - DAHA BÜYÜK ALAN + PADDING
                 main_text = TextClip(
                     text=group_text.upper(),
                     font=selected_font,
@@ -247,13 +247,13 @@ class VideoManager:
                     stroke_color=self.template_settings["colors"]["background"],
                     stroke_width=self.template_settings["stroke_width"],
                     method="caption",
-                    size=(video_width - 100, None),  # Daha geniş alan (60'tan 100'e)
+                    size=(video_width - 100, None),  # Geniş alan
                     text_align="center",
-                    interline=-5  # Satır arası boşluk daha az
+                    interline=10  # Satır arası boşluk ARTIRILDI (yazı kesilmesin)
                 )
                 
                 # Pozisyon: Ekranın ortasında ama biraz daha yukarıda
-                y_position = int(video_height * 0.40)  # Ekranın %40'ında (daha yukarı)
+                y_position = int(video_height * 0.38)  # %38'e çekildi (daha yukarı)
                 
                 main_text = main_text.with_start(start_time).with_duration(group_duration)
                 main_text = main_text.with_position(("center", y_position))
@@ -523,16 +523,32 @@ class VideoManager:
             if subtitle_text:
                 print(f"📝 Alt yazı ekleniyor (Şablon: {self.template_settings['name']})...")
                 
-                # Arka plan overlay'leri oluştur
-                overlays = self.create_background_overlay(video.w, video.h, audio_duration)
+                # Arka plan overlay'leri KALDIRILDI (siyah filigran sorunu)
+                # overlays = self.create_background_overlay(video.w, video.h, audio_duration)
+                overlays = []  # Boş liste
                 
-                # Kelime kelime alt yazılar oluştur
-                subtitle_clips = self.create_word_by_word_subtitle(
-                    subtitle_text,
-                    video.w,
-                    video.h,
-                    audio_duration
-                )
+                # Alt yazı tipi config'den al
+                subtitle_type = config.SUBTITLE_TYPE if hasattr(config, 'SUBTITLE_TYPE') else "word_by_word"
+                
+                if subtitle_type == "scrolling":
+                    # KAYAN ALT YAZI (VİRAL!)
+                    print("📝 Alt yazı ekleniyor (Aşağıdan yukarıya kayan - VİRAL!)...")
+                    scrolling_subtitle = self.create_scrolling_subtitle(
+                        subtitle_text,
+                        video.w,
+                        video.h,
+                        audio_duration
+                    )
+                    subtitle_clips = [scrolling_subtitle] if scrolling_subtitle else []
+                else:
+                    # KELİME KELİME ALT YAZI (STATİK)
+                    print(f"📝 Alt yazı ekleniyor (Şablon: {self.template_settings['name']})...")
+                    subtitle_clips = self.create_word_by_word_subtitle(
+                        subtitle_text,
+                        video.w,
+                        video.h,
+                        audio_duration
+                    )
                 
                 # Watermark ekle (config'den kontrol et)
                 watermark = None

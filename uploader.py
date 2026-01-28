@@ -56,22 +56,28 @@ class VideoUploader:
             title = title[:77] + "..."
         
         # Açıklama - #Shorts hashtag'i ÖNEMLİ!
-        description = f"{scenario}\n\n#Shorts\n\n"
+        description = f"{scenario}\n\n"
         
-        # Hashtag'ler - Daha viral hashtag'ler
+        # Hashtag'ler - YouTube Shorts için optimize edilmiş
         hashtags = [
-            "#ilginçbilgiler",
-            "#şaşırtıcıgerçekler", 
-            "#bilgiçağı",
-            "#öğren",
-            "#keşfet",
+            "#Shorts",
+            "#YouTubeShorts",
             "#viral",
-            "#shorts",
+            "#keşfet",
+            "#ilginçbilgiler",
+            "#şaşırtıcıgerçekler",
+            "#öğren",
+            "#bilgiçağı",
             "#fyp",
-            "#türkiye"
+            "#foryou",
+            "#türkiye",
+            "#türkçe",
+            "#eğitim",
+            "#bilim",
+            "#teknoloji"
         ]
         
-        description += " ".join(hashtags)
+        description += "\n".join(hashtags)
         
         return title, description, hashtags
     

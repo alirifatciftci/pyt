@@ -29,7 +29,7 @@ class ContentGenerator:
         """
         try:
             prompt = """
-            Bana TikTok/YouTube Shorts için 30 saniyelik, VİRAL olabilecek ilgi çekici bir içerik senaryosu yaz.
+            Bana TikTok/YouTube Shorts için 30 saniyelik, VİRAL olabilecek BOMBASTIK bir içerik senaryosu yaz.
             
             ÖNEMLİ KURALLAR:
             1. İLK CÜMLE BOMBA GİBİ OLMALI! Merak uyandırmalı (örnek: "DUR! Bunu duymadan geçme!", "İnanmayacaksın ama...", "ŞOK! Herkes bunu konuşuyor!")
@@ -39,58 +39,41 @@ class ContentGenerator:
             5. 30 saniyede rahatça okunabilecek uzunlukta olsun (yaklaşık 80-100 kelime)
             6. Türkçe olmalı ve sadece düz metin olarak ver
             7. TEK BİR KONU hakkında konuş
-            8. SON CÜMLE ETKILEŞIM İSTEMELI (örnek: "Sen ne düşünüyorsun?", "Yorumlara yaz!", "Beğenmeyi unutma!")
+            8. SON CÜMLE ETKILEŞIM İSTEMELİ (örnek: "Sen ne düşünüyorsun?", "Yorumlara yaz!", "Beğenmeyi unutma!")
             
-            VİRAL İÇERİK KATEGORİLERİ (Her seferinde FARKLI birini seç):
+            VİRAL İÇERİK KATEGORİLERİ (SADECE EN VİRAL OLANLARI SEÇ):
             
-            🔥 ÜNLÜLER & DEDIKODU:
-            - Ünlü isimlerin az bilinen gerçekleri
-            - Hollywood sırları ve skandallar
-            - Ünlülerin lüks yaşamları
-            - Ünlü çiftlerin ilişki hikayeleri
-            - Sosyal medya fenomenleri
+            🔥 PARA & LÜKS YAŞAM (ÇOK VİRAL):
+            - Genç yaşta zengin olanlar (örn: "18 yaşında milyoner oldu!")
+            - Lüks arabalar ve fiyatları (örn: "Bu arabanın fiyatı inanılmaz!")
+            - Pahalı evler ve yatlar (örn: "Dünyanın en pahalı evi!")
+            - Kripto milyonerleri (örn: "Bitcoin'den zengin oldu!")
+            - İş dünyası sırları (örn: "Amazon'un gizli stratejisi!")
             
-            💰 PARA & BAŞARI:
-            - Genç yaşta zengin olanlar
-            - İş dünyası sırları
-            - Kripto ve teknoloji milyarderleri
-            - Lüks yaşam tarzları
-            - Başarı hikayeleri
+            💰 BAŞARI HİKAYELERİ (ÇOK VİRAL):
+            - Sıfırdan zirveye (örn: "Evsizken milyoner oldu!")
+            - Genç girişimciler (örn: "20 yaşında şirket kurdu!")
+            - Teknoloji devleri (örn: "Elon Musk'ın ilk işi!")
+            - Spor yıldızları (örn: "Ronaldo'nun bilinmeyen hikayesi!")
             
-            🌍 GÜNCEL OLAYLAR & TRENDLER:
-            - Viral olan olaylar
-            - Sosyal medya trendleri
-            - Teknoloji haberleri
-            - Popüler kültür olayları
-            - Şok edici haberler
+            🌍 ŞOK EDİCİ GERÇEKLER (ÇOK VİRAL):
+            - İnanılmaz bilimsel gerçekler (örn: "Güneş aslında...")
+            - Tarihten şok edici olaylar (örn: "Titanik'in gizli sırrı!")
+            - Hayvanlar aleminden inanılmaz detaylar (örn: "Köpekbalıkları aslında...")
+            - İnsan vücudu hakkında şaşırtıcı bilgiler (örn: "Beynin gizli gücü!")
             
-            🎬 EĞLENCE & MEDYA:
-            - Film ve dizi sırları
-            - Müzik dünyası skandalları
-            - Netflix ve platformlar
-            - Oyun dünyası haberleri
-            - Viral videolar
+            🚀 TEKNOLOJİ & GELECEK (VİRAL):
+            - Yapay zeka gelişmeleri (örn: "AI artık bunu yapabiliyor!")
+            - Uzay haberleri (örn: "Mars'ta su bulundu!")
+            - Yeni teknolojiler (örn: "iPhone'un gizli özelliği!")
+            - Gelecek tahminleri (örn: "2030'da hayat böyle olacak!")
             
-            💎 LÜKS & YAŞAM TARZI:
-            - En pahalı şeyler
-            - Lüks otomobiller
-            - Milyonluk evler
-            - Pahalı tatiller
-            - Lüks markalar
-            
-            🚀 TEKNOLOJİ & GELECEK:
-            - Yapay zeka gelişmeleri
-            - Uzay haberleri
-            - Yeni teknolojiler
-            - Gelecek tahminleri
-            - Bilim kurgu gerçek oluyor
-            
-            🧠 İLGİNÇ BİLGİLER & BİLİM:
-            - Şaşırtıcı bilimsel gerçekler
-            - İnsan vücudu hakkında ilginç bilgiler
-            - Hayvanlar aleminden şok edici detaylar
-            - Tarihten ilginç olaylar
-            - Psikoloji ve beyin bilimi
+            ❌ BUNLARDAN KAÇIN (DÜŞÜK VİRAL):
+            - Sıradan günlük bilgiler
+            - Herkesin bildiği şeyler
+            - Sıkıcı tarih dersleri
+            - Genel kültür bilgileri
+            - Ünlü kişilerin hayatları (Pexels'te görseli yok)
             
             ÇOK ÖNEMLİ - DOĞRULUK KURALLARI:
             ❗ İçerik MUTLAKA GERÇEK olmalı (uydurma bilgi verme!)
@@ -99,23 +82,28 @@ class ContentGenerator:
             ❗ Clickbait olabilir ama yalan söyleme
             ❗ Şüpheli bilgiler için "iddiaya göre" gibi ifadeler kullan
             ❗ Her video FARKLI bir konu olmalı
-            ❗ Pexels'te videosu bulunabilecek konular seç
+            ❗ Pexels'te görseli bulunabilecek konular seç
             
-            ARAMA TERİMİ İÇİN:
-            - Ünlüler için: "celebrity" veya "famous people" veya "paparazzi"
-            - Para için: "money" veya "luxury lifestyle" veya "rich"
-            - Teknoloji için: "technology" veya "artificial intelligence" veya "future"
-            - Lüks için: "luxury car" veya "mansion" veya "yacht"
-            - Şehir için: "city lights" veya "urban" veya "nightlife"
-            - Bilim için: "science" veya "laboratory" veya "research"
-            - Genel için: "people" veya "lifestyle" veya "modern"
+            ARAMA TERİMİ İÇİN (KONUYLA TAM UYUMLU):
+            - Para/Lüks için: "money", "luxury car", "mansion", "yacht", "gold", "cash"
+            - Başarı için: "success", "entrepreneur", "business", "startup", "office"
+            - Teknoloji için: "technology", "ai", "robot", "computer", "future"
+            - Bilim için: "science", "space", "laboratory", "research", "brain"
+            - Hayvanlar için: "shark", "lion", "eagle", "ocean", "wildlife"
+            - Spor için: "football", "basketball", "athlete", "stadium", "training"
+            
+            ÇOK ÖNEMLİ - ARAMA TERİMİ KURALLARI:
+            ❗ Arama terimi KONUNUN ÖZÜ olmalı (örn: Para → "money", Araba → "luxury car")
+            ❗ Genel terimler kullan (örn: "celebrity" değil, "money" veya "success")
+            ❗ Pexels'te mutlaka bulunabilecek terimler seç
+            ❗ İngilizce olmalı ve 1-2 kelime olmalı
             
             Formatı şu şekilde olsun:
             SENARYO:
             [sadece seslendirme metni buraya - viral ve ilgi çekici ama GERÇEK]
             
             ARAMA_TERİMİ:
-            [Pexels'te bulunabilecek genel arama terimi - 1-2 kelime]
+            [Pexels'te bulunabilecek genel arama terimi - 1-2 kelime, konuyla TAM UYUMLU]
             """
             
             print("🤖 Gemini'den içerik üretiliyor...")
@@ -132,7 +120,7 @@ class ContentGenerator:
                 parts = content.split("ARAMA_TERİMİ:")
                 scenario = parts[0].replace("SENARYO:", "").strip()
                 
-                # Arama terimini al (1-2 kelime olabilir)
+                # Arama terimini al (1-2 kelime)
                 search_term_raw = parts[1].strip().split('\n')[0].strip()
                 # Sadece ilk 2 kelimeyi al
                 search_term_words = search_term_raw.split()[:2]
@@ -140,7 +128,7 @@ class ContentGenerator:
             else:
                 # Fallback: Tüm metni senaryo olarak al
                 scenario = content.strip()
-                search_term = "nature"  # Varsayılan arama terimi
+                search_term = "money"  # Varsayılan viral arama terimi
             
             print(f"✅ Senaryo üretildi ({len(scenario)} karakter)")
             print(f"🔍 Arama terimi: {search_term}")

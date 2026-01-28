@@ -124,12 +124,32 @@ class VideoOtoFabrika:
                 audio_duration = audio_temp.duration
                 audio_temp.close()
                 
+                # Hedef boyut: 1080x1920 (YouTube Shorts)
+                target_width = 1080
+                target_height = 1920
+                
                 # Her videoyu yükle ve eşit süreye böl
                 clips = []
                 duration_per_video = audio_duration / len(downloaded_videos)
                 
                 for idx, video_path in enumerate(downloaded_videos):
                     clip = VideoFileClip(video_path)
+                    
+                    # ÖNCE BOYUTU AYARLA (tüm videolar aynı boyutta olmalı)
+                    if clip.w != target_width or clip.h != target_height:
+                        # Aspect ratio'yu koru ve crop et
+                        clip = clip.resized(height=target_height)
+                        if clip.w < target_width:
+                            clip = clip.resized(width=target_width)
+                        # Ortadan crop et
+                        x_center = clip.w / 2
+                        y_center = clip.h / 2
+                        clip = clip.cropped(
+                            x_center=x_center,
+                            y_center=y_center,
+                            width=target_width,
+                            height=target_height
+                        )
                     
                     # Videoyu hedef süreye göre ayarla
                     if clip.duration < duration_per_video:
@@ -141,8 +161,8 @@ class VideoOtoFabrika:
                     clip = clip.subclipped(0, min(duration_per_video, clip.duration))
                     clips.append(clip)
                 
-                # Birleştir ve kaydet
-                combined = concatenate_videoclips(clips, method="compose")
+                # Birleştir ve kaydet (method="chain" kullan - ard arda)
+                combined = concatenate_videoclips(clips, method="chain")
                 combined_path = "temp_combined_video.mp4"
                 combined.write_videofile(combined_path, codec='libx264', audio=False, fps=30, preset='fast', threads=4, logger=None)
                 combined.close()
